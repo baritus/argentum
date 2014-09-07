@@ -872,6 +872,9 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
     return nSubsidy + nFees;
 }
 
+double GetNextBlockValue() {
+	return (double)GetBlockValue( nBestHeight + 1, 0, hashBestChain ) / (double)COIN;
+}
 
 
 static const int64 nTargetTimespan = 32 * 250; // Argentum: every 250 blocks
